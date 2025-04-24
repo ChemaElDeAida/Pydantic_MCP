@@ -44,7 +44,7 @@ async def main():
             break
         
         result = await agent.run(user_input)
-        print('['+ollama_model.model_name+']:', result.output)
+        print('['+agent.model.model_name+']:', result.output)
 
 if __name__ == '__main__':
     asyncio.run(main())
