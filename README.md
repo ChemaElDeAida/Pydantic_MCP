@@ -1,0 +1,1 @@
+Esto es lo que he hecho en Pydantic, el prueba.txt es la prueba que te he mandado en la foto por correo y solo tiene la capital de japon dentro, los dos Json son las tools configuradas por separado para poder hacer las pruebas paso a paso, el mcp_client es el cliente para las herramientas y pydantic_agent es la creacción del agente, eligiendo la LLM a usar, se genera un chat   
