@@ -20,7 +20,7 @@ async def analyze_binary():
 
         gemini_model = OpenAIModel(
             'google/gemini-2.5-flash',
-            provider= OpenRouterProvider(api_key='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')
+            provider= OpenRouterProvider(api_key='')
         )
         agent_gemini = Agent(gemini_model, google_thinking_config={'include_thoughts': True}, tools=tools, temperature = 0.0,
                              context="You are a reverse engineering expert. You will be given a binary file and you need to analyze it using the MCP tools." \
@@ -32,7 +32,7 @@ async def analyze_binary():
 
         gpt_model = OpenAIModel(
         'openai/gpt-4o-mini',
-        provider=OpenRouterProvider(api_key = "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")
+        provider=OpenRouterProvider(api_key = "")
         )
         gpt_agent = Agent(gpt_model, openai_reasoning_effort='low',
     openai_reasoning_summary='detailed', tools=tools, temperature = 0.0,
@@ -47,7 +47,7 @@ async def analyze_binary():
 
         qwen_model = OpenAIModel(
         'qwen/qwen3-32b',
-        provider=OpenRouterProvider(api_key = "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")
+        provider=OpenRouterProvider(api_key = "")
         )
         agent_qwen = Agent(qwen_model, tools=tools, temperature = 0.0,
                              context="You are a reverse engineering expert. You will need to given a binary file and you need to analyze it using the MCP tools." \
@@ -60,7 +60,7 @@ async def analyze_binary():
 
         claude_model = OpenAIModel(
         'anthropic/claude-3.5-haiku',
-        provider=OpenRouterProvider(api_key = "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")
+        provider=OpenRouterProvider(api_key = "")
         )
         claude_agent = Agent(claude_model, anthropic_thinking={'type': 'enabled', 'budget_tokens': 1024}, tools=tools, temperature = 0.0,
                              context="You are a reverse engineering expert. You will need to given a binary file and you need to analyze it using the MCP tools." \
@@ -144,7 +144,7 @@ async def analyze_binary():
 
     #     gemini_model2 = OpenAIModel(
     #         'google/gemini-2.5-flash',
-    #         provider= OpenRouterProvider(api_key='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')
+    #         provider= OpenRouterProvider(api_key='')
     #     )
     #     agent_gemini2 = Agent(gemini_model2, google_thinking_config={'include_thoughts': True}, tools=tools, temperature = 0.0,
     #                          context= result_gemini.output)
@@ -155,7 +155,7 @@ async def analyze_binary():
         
     #     gpt_model2 = OpenAIModel(
     #     'openai/gpt-4o-mini',
-    #     provider=OpenRouterProvider(api_key = "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")
+    #     provider=OpenRouterProvider(api_key = "")
     #     )
     #     gpt_agent2 = Agent(gpt_model2, openai_reasoning_effort='low',
     # openai_reasoning_summary='detailed', tools=tools, temperature = 0.0,
@@ -165,7 +165,7 @@ async def analyze_binary():
         
     #     qwen_model2 = OpenAIModel(
     #     'qwen/qwen3-32b',
-    #     provider=OpenRouterProvider(api_key = "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")
+    #     provider=OpenRouterProvider(api_key = "")
     #     )
     #     agent_qwen2 = Agent(qwen_model2, tools=tools, temperature = 0.0,
     #                          context=result_qwen.output)
@@ -176,7 +176,7 @@ async def analyze_binary():
 
     #     claude_model2 = OpenAIModel(
     #     'anthropic/claude-3.5-haiku',
-    #     provider=OpenRouterProvider(api_key = "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")
+    #     provider=OpenRouterProvider(api_key = "")
     #     )
     #     claude_agent2 = Agent(claude_model2, anthropic_thinking={'type': 'enabled', 'budget_tokens': 1024}, tools=tools, temperature = 0.0,
     #                          context=result_claude.output)
@@ -189,4 +189,5 @@ async def analyze_binary():
 
 if __name__ == "__main__":
     
+
     asyncio.run(analyze_binary())
